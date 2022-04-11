@@ -30,7 +30,7 @@ state_and_token,19,
 10,op_less
 8,op_greater
 9,op_assign
-11,op_not);
+11,op_not
 14,separator
 21,op_greater_equal
 22,op_equal
