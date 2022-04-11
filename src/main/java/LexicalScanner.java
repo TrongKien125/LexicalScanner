@@ -32,7 +32,7 @@ public class LexicalScanner {
                 }
             } else if(isString(currentState)) {
                 nextState = getnextState(c);
-                if(nextState !=28) {
+                if(nextState !=28 && nextState != 25) {
                     nextState = 15;
                 }
             } else if (isSeparator(c)) {
@@ -40,7 +40,6 @@ public class LexicalScanner {
                 str="" + c;
                 nextState = getState(currentState, "[]{}();");
                 setCurrentState(nextState);
-                System.out.println(currentState +"\t"+ nextState);
             } else {
                 nextState = getnextState(c);
             }
@@ -54,7 +53,11 @@ public class LexicalScanner {
                 setCurrentState(nextState);
             }
         }
-        writeOutput(str, currentState);
+        if(!isMultComment(currentState) && !isString(currentState)) {
+            writeOutput(str, currentState);
+        } else {
+            FileManagement.writeFile(str+ "\n", path_file_output);
+        }
     }
 
     public boolean isCommentinLine(int currentState) {
@@ -134,10 +137,10 @@ public class LexicalScanner {
     public void writeOutput(String str,int state) {
         if(iskeyword(str)) {
             Token tokenType = Token.key_word;
-            FileManagement.writeFile(str+ "\t" + tokenType+"\n", path_file_output);
+            FileManagement.writeFile(str+ "\t: " + tokenType+"\n", path_file_output);
         } else {
             Token tokenType = automaton.finalStates.get(state);
-            if(tokenType != null) FileManagement.writeFile(str+ "\t" + tokenType+"\n", path_file_output);
+            if(tokenType != null) FileManagement.writeFile(str+ "\t: " + tokenType+"\n", path_file_output);
         }
         setCurrentState(0);
     }

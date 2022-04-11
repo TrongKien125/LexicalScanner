@@ -1,3 +1,26 @@
-/* akjdhf ***/	mult_comment
-&&	op_and
-"fadf"	String_literal
+count	: identifier
+=	: op_assign
+1	: int_literal
+;	: separator
+while	key_word
+: (	: separator
+count	: identifier
+<	: op_less
+10	: int_literal
+)	: separator
+{	: separator
+print	: identifier
+(	: separator
+"count is: "	: String_literal
+,	: separator
+count	: identifier
+,	: separator
+"\n"	: String_literal
+)	: separator
+;	: separator
+count	: identifier
+=	: op_assign
+count	: identifier
+1	: int_literal
+;	: separator
+}	: separator

@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        String file_input = "C:\\Users\\DELL\\IdeaProjects\\lexicalScanner\\src\\main\\resources\\input.vc";
+        String file_input = "C:\\Users\\DELL\\IdeaProjects\\lexicalScanner\\src\\main\\resources\\input2.vc";
         String file_output = "C:\\Users\\DELL\\IdeaProjects\\lexicalScanner\\src\\main\\resources\\output.vctok";
         Automaton automaton = new Automaton("C:\\Users\\DELL\\IdeaProjects\\lexicalScanner\\src\\main\\resources\\automatondata.dat");
         FileManagement.clearFile(file_output);
