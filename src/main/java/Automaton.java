@@ -33,7 +33,7 @@ public class Automaton {
         this.finalStates.put(23, Token.op_less_equal);
         this.finalStates.put(24, Token.op_different);
         this.finalStates.put(16, Token.comment_in_line);
-        this.finalStates.put(20, Token.mult_comment);
+        this.finalStates.put(20, Token.comment_multiple_lines);
         this.finalStates.put(25, Token.escape);
         this.finalStates.put(26, Token.op_or);
         this.finalStates.put(6, Token.identifier);

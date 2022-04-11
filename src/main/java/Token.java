@@ -12,7 +12,7 @@ public enum Token {
     op_less_equal,
     op_different,
     comment_in_line,
-    mult_comment,
+    comment_multiple_lines,
     escape,
     op_or,
     identifier,

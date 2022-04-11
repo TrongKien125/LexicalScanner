@@ -1,5 +1,6 @@
+/* comment */
 count = 1;
 while (count < 10) {
-    print("count is: ", count, "\n");
+    print("count is: ", count, "\n"); // count is ...
     count = count + 1;
 }

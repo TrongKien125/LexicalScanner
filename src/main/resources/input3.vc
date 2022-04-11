@@ -1,0 +1,6 @@
+float pi = 3.14;
+float _f = 3.25E-1;
+
+if (pi >= _f) {
+    return 0;
+}
