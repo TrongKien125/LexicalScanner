@@ -1,6 +1,6 @@
 import java.util.List;
 public class LexicalScanner {
-    int currentState = 0;
+    int currentState;
     List<String> lines;
     Automaton automaton;
     String path_file_output;
@@ -10,6 +10,7 @@ public class LexicalScanner {
         this.automaton = automaton;
         this.path_file_input = path_file_input;
         this.path_file_output = path_file_output;
+        currentState = automaton.starting_state;
         setLines();
     }
 
@@ -136,10 +137,10 @@ public class LexicalScanner {
 
     public void writeOutput(String str,int state) {
         if(iskeyword(str)) {
-            Token tokenType = Token.key_word;
+            String tokenType = "key_word";
             FileManagement.writeFile(str+ "\t: " + tokenType+"\n", path_file_output);
         } else {
-            Token tokenType = automaton.finalStates.get(state);
+            String tokenType = automaton.finalStates.get(state);
             if(tokenType != null) FileManagement.writeFile(str+ "\t: " + tokenType+"\n", path_file_output);
         }
         setCurrentState(0);

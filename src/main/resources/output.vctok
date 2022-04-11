@@ -1,21 +1,28 @@
-float	: key_word
-pi	: identifier
+/* comment */	: comment_multiple_lines
+count	: identifier
 =	: op_assign
-3.14	: float_literal
+1	: int_literal
 ;	: separator
-float	: key_word
-_f	: identifier
-=	: op_assign
-3.25E-1	: float_literal
-;	: separator
-if	: key_word
+while	: key_word
 (	: separator
-pi	: identifier
->=	: op_greater_equal
-_f	: identifier
+count	: identifier
+<	: op_less
+10	: int_literal
 )	: separator
 {	: separator
-return	: key_word
-0	: int_literal
+print	: identifier
+(	: separator
+"count is: "	: String_literal
+,	: separator
+count	: identifier
+,	: separator
+"\n"	: String_literal
+)	: separator
+;	: separator
+// count is ...	: comment_in_line
+count	: identifier
+=	: op_assign
+count	: identifier
+1	: int_literal
 ;	: separator
 }	: separator
