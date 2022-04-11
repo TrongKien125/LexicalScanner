@@ -1,0 +1,28 @@
+/* comment */	: comment_multiple_lines
+count	: identifier
+=	: op_assign
+1	: int_literal
+;	: separator
+while	: key_word
+(	: separator
+count	: identifier
+<	: op_less
+10	: int_literal
+)	: separator
+{	: separator
+print	: identifier
+(	: separator
+"count is: "	: String_literal
+,	: separator
+count	: identifier
+,	: separator
+"\n"	: String_literal
+)	: separator
+;	: separator
+// count is ...	: comment_in_line
+count	: identifier
+=	: op_assign
+count	: identifier
+1	: int_literal
+;	: separator
+}	: separator
